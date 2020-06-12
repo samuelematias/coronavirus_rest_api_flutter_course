@@ -1,0 +1,5 @@
+# To use this, download the VsCode Plugin "REST Client"
+
+# Used to get an access token given an autorization key
+POST {{baseUrl}}/token?grant_type=client_credentials
+Authorization: Basic {{authorization}}
