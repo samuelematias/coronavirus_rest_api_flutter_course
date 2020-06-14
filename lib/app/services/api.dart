@@ -7,12 +7,14 @@ class API {
 
   factory API.sandbox() => API(apiKey: APIKeys.ncovSandboxKey);
 
-  static final String host = 'ncov2019-admin.firebaseapp.com';
+  static final String host = 'apigw.nubentos.com';
+  static final int port = 443;
 
   Uri tokenUri() => Uri(
         scheme: 'https',
         host: host,
+        port: port,
         path: 'token',
-        queryParameters: {'grand_type': 'client_credentials'},
+        queryParameters: {'grant_type': 'client_credentials'},
       );
 }
