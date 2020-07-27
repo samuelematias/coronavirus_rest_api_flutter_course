@@ -21,6 +21,16 @@
 
 Coronavirus Tracking App, how track Cases, Suspected cases, Suspected cases, Deaths and Recovered.
 
+## Getting Started
+
+- Rename the the file `api_keys_example.dart` to `api_keys.dart`.
+
+- Go to [API-nCoV2019](https://apimarket.nubentos.com/store/apis/info?name=API-nCoV2019&version=1.0.0&tenant=nubentos.com) and get a API KEY.
+
+- To get the API KEY its necessary sign-up on this [apimarket.nubentos](https://apimarket.nubentos.com/store/site/pages/sign-up.jag?tenant=nubentos.com).
+
+- Afteter get the API KEY, set this app on `ncovSandboxKey` (inside `api_keys.dart`).
+
 ## Features
 
 <p align="center">
