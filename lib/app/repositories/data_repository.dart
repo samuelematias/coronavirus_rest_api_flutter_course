@@ -1,13 +1,15 @@
 import 'package:coronavirus_rest_api_flutter_course/app/repositories/endpoints_data.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/services/api_service.dart';
 import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
+import 'package:coronavirus_rest_api_flutter_course/app/services/api_service.dart';
+import 'package:coronavirus_rest_api_flutter_course/app/services/data_cache_service.dart';
 import 'package:coronavirus_rest_api_flutter_course/app/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 
 class DataRepository {
-  DataRepository({@required this.apiService});
+  DataRepository({@required this.apiService, @required this.dataCacheService});
   final APIService apiService;
+  final DataCacheService dataCacheService;
 
   String _accessToken;
 
@@ -17,12 +19,17 @@ class DataRepository {
             accessToken: _accessToken, endpoint: endpoint),
       );
 
-  Future<EndpointsData> getAllEndpointsData() async =>
-      await _getDataRefreshingToken<EndpointsData>(
-        onGetData: _getAllEndpointsData,
-      );
+  EndpointsData getAllEndpointsCachedData() => dataCacheService.getData();
 
-  //Generic & function arguments => more reusable code
+  Future<EndpointsData> getAllEndpointsData() async {
+    final endpointsData = await _getDataRefreshingToken<EndpointsData>(
+      onGetData: _getAllEndpointsData,
+    );
+    // save to cache
+    await dataCacheService.setData(endpointsData);
+    return endpointsData;
+  }
+
   Future<T> _getDataRefreshingToken<T>({Future<T> Function() onGetData}) async {
     try {
       if (_accessToken == null) {
@@ -40,9 +47,6 @@ class DataRepository {
   }
 
   Future<EndpointsData> _getAllEndpointsData() async {
-    //All futures execute in parallel (concurrently)
-    //When all futures have completed, result is returned
-    //This returns a List<int>
     final values = await Future.wait([
       apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.cases),

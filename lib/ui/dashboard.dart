@@ -20,13 +20,14 @@ class _DashboardState extends State<Dashboard> {
   @override
   void initState() {
     super.initState();
+    final dataRepository = context.read<DataRepository>();
+    _endpointsData = dataRepository.getAllEndpointsCachedData();
     _updateData();
   }
 
   Future<void> _updateData() async {
     try {
-      final dataRepository =
-          Provider.of<DataRepository>(context, listen: false);
+      final dataRepository = context.read<DataRepository>();
       final endpointsData = await dataRepository.getAllEndpointsData();
       setState(() => _endpointsData = endpointsData);
     } on SocketException catch (_) {
