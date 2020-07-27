@@ -1,16 +1,43 @@
-# coronavirus_rest_api_flutter_course
+<!-- header section -->
+<p align="center">
+  <img  alt="Coronavirus Tracker - Logo" src="https://i.imgur.com/hxqSM3z.png" height="224" /><br/>
+  <span>Mobile Application Developed in <b>Flutter.</b></span><br/>
+  <span>Running on both mobile platforms, <b>Android 🤖</b> & <b>iOS 🍎</b>. </span><br/>
+</p>
+<!-- header section END -->
+  
+<!-- show case/gif section -->
+<p align="center">
+    <img alt="Coronavirus Tracker - Home" height="620" src="https://i.imgur.com/kniEUG5.gif" />
+  </a>
+</p>
+<!-- show case/gif section END-->
 
-A new Flutter project.
+<br/>
 
-## Getting Started
+<!-- about app -->
 
-This project is a starting point for a Flutter application.
+## About the App
 
-A few resources to get you started if this is your first Flutter project:
+Coronavirus Tracking App, how track Cases, Suspected cases, Suspected cases, Deaths and Recovered.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Features
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+    <img alt="Coronavirus Tracker - Features" height="620" src="https://i.imgur.com/WgefeFJ.png" />
+  </a>
+</p>
+
+## Tech Stack
+
+- [Dart](https://dart.dev/)
+- [Flutter](https://flutter.dev/)
+
+## Plugins
+
+- [http](https://pub.dev/packages/http)
+- [provider](https://pub.dev/packages/provider)
+- [intl](https://pub.dev/packages/intl)
+- [shared_preferences](https://pub.dev/packages/shared_preferences)
+
+<!-- about app END-->

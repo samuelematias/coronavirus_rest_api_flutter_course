@@ -1,36 +1,36 @@
 # To use this, download the VsCode Plugin "REST Client"
 
 # Used to get an access token given an autorization key
-POST {{baseUrl}}/token?grant_type=client_credentials
+POST {{baseUrl}}/token
 Authorization: Basic {{authorization}}
 
 
 ###
 
-GET {{baseUrl}}/t/nubentos.com/ncovapi/1.0.0/cases
+GET {{baseUrl}}/cases
 Accept: application/json
 Authorization: Bearer {{accessToken}}
 
 ###
 
-GET {{baseUrl}}/t/nubentos.com/ncovapi/1.0.0/cases/suspected
+GET {{baseUrl}}/casesSuspected
 Accept: application/json
 Authorization: Bearer {{accessToken}}
 
 ###
 
-GET {{baseUrl}}/t/nubentos.com/ncovapi/1.0.0/cases/confirmed
+GET {{baseUrl}}/casesConfirmed
 Accept: application/json
 Authorization: Bearer {{accessToken}}
 
 ###
 
-GET {{baseUrl}}/t/nubentos.com/ncovapi/1.0.0/deaths
+GET {{baseUrl}}/deaths
 Accept: application/json
 Authorization: Bearer {{accessToken}}
 
 ###
 
-GET {{baseUrl}}/t/nubentos.com/ncovapi/1.0.0/recovered
+GET {{baseUrl}}/recovered
 Accept: application/json
 Authorization: Bearer {{accessToken}}
