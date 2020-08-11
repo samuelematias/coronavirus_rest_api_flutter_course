@@ -29,7 +29,7 @@ Coronavirus Tracking App, how track Cases, Suspected cases, Suspected cases, Dea
 
 - To get the API KEY its necessary sign-up on this [apimarket.nubentos](https://apimarket.nubentos.com/store/site/pages/sign-up.jag?tenant=nubentos.com).
 
-- Afteter get the API KEY, set this app on `ncovSandboxKey` (inside `api_keys.dart`).
+- After get the API KEY, set this app on `ncovSandboxKey` (inside `api_keys.dart`).
 
 ## Features
 
